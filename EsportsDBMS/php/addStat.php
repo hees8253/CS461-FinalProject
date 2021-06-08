@@ -45,14 +45,15 @@ a:active {
 			die("Connection failed: " . $conn->connect_error);
 		}
 		
-		$teamID = $_POST['teamID'];
-		$numPlayers = $_POST['numPlayers'];
-		$teamName = $_POST['teamName'];
-		$game = $_POST['game'];
+		$statName = $_POST['statName'];
+		$statValue = $_POST['statValue'];
+		$playerID = $_POST['playerID'];
+		$teamID = $_POST['matchID'];
+		$leagueID = $_POST['leagueID'];
 		
 		
 		
-		$sql = " INSERT INTO `Teams`
+		$sql = " INSERT INTO `Stats` (statName, statValue, playerID, teamID, matchID, leagueID);
 			VALUES('$teamID', '$numPlayers', '$teamName', '$game');";
 		
 		
