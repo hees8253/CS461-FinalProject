@@ -54,7 +54,7 @@ a:active {
 			echo "Player Added to database."
 		}
 		
-		}
+		
 	
 	?>
 </body>
