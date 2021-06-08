@@ -68,6 +68,7 @@ a:active {
 		$conn->close();
 	
 	?>
+	<br>
 	<tr>
             <td></td>
             <td><a href="http://webtech.kettering.edu/~reic6330/ESportsDBMSHome.html" id = "homebutton" class="btn btn btn-primary">Home</a></td>
