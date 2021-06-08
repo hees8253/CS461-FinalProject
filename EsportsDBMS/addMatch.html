@@ -36,25 +36,26 @@ a.button {
 </style>
 </head>
 <body>
-
-    <form>
-        <div class="addMatchForm">
-          <label for="matchId">Match ID</label>
-          <input type="text" class="form-control" id="matchId" aria-describedby="matchIdHelp" placeholder="Enter match id">
-          <small id="matchIdHelp" class="form-text text-muted">Value must be unique</small>
-        </div>
-        <div class="addMatchForm">
-            <label for="leagueId">League ID</label>
-            <input type="text" class="form-control" id="leagueId" aria-describedby="leagueIdHelp" placeholder="Enter league id">
-            <small id="leagueIdHelp" class="form-text text-muted">Value must exist in database</small>
-        </div>
-        <div class="addMatchForm">
-            <label for="awayTeamName">Away team name</label>
-            <input type="text" class="form-control" id="awayTeamName" aria-describedby="awayTeamHelp" placeholder="Enter Away Team Name">
-            <small id="awayTeamHelp" class="form-text text-muted">Value must exist in database</small>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    <div class="content">
+        <form>
+            <div class="addMatchForm">
+            <label for="matchId">Match ID</label>
+            <input type="text" class="form-control" id="matchId" aria-describedby="matchIdHelp" placeholder="Enter match id">
+            <small id="matchIdHelp" class="form-text text-muted">Value must be unique</small>
+            </div>
+            <div class="addMatchForm">
+                <label for="leagueId">League ID</label>
+                <input type="text" class="form-control" id="leagueId" aria-describedby="leagueIdHelp" placeholder="Enter league id">
+                <small id="leagueIdHelp" class="form-text text-muted">Value must exist in database</small>
+            </div>
+            <div class="addMatchForm">
+                <label for="awayTeamName">Away team name</label>
+                <input type="text" class="form-control" id="awayTeamName" aria-describedby="awayTeamHelp" placeholder="Enter Away Team Name">
+                <small id="awayTeamHelp" class="form-text text-muted">Value must exist in database</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
