@@ -53,8 +53,8 @@ a:active {
 		
 		
 		
-		$sql = " INSERT INTO `Stats` (statName, statValue, playerID, teamID, matchID, leagueID);
-			VALUES('$teamID', '$numPlayers', '$teamName', '$game');";
+		$sql = " INSERT INTO `Stats` (`statName`, `statValue`, `playerID`, `teamID`, `matchID`, `leagueID`)
+			VALUES('$statName', '$statValue', '$playerID', '$teamID', '$matchID', '$leagueID');";
 		
 		
 		if ($conn->query($sql) === TRUE) {
