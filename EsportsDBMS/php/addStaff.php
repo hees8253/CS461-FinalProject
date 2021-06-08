@@ -43,16 +43,15 @@ a:active {
 		$name = $_POST['Name'];
 		$inGameName = $_POST['inGameName'];
 		$discordId = $_POST['discordId'];
-		$classStanding = $_POST['classStanding'];
-		$gradDate = $_POST['gradDate'];
-		$teamID = $_POST['teamID'];
-		$teamRole = $_POST['teamRole'];
+		$role = $_POST['role'];
+		$gameTitle = $_POST['gameTitle'];
+		
 		
 		$sql = " INSERT INTO `OrgMembers`
-			VALUES('$inEmail', '$name', '$inGameName', '$discordId', 'Player');";
+			VALUES('$inEmail', '$name', '$inGameName', '$discordId', 'Staff');";
 		$sql .= "
-			INSERT INTO `Players`
-			Values('$inGameName', '$classStanding', '$gradDate', '$teamID', '$teamRole');";
+			INSERT INTO `Staff`
+			Values('$inGameName', '$role', '$gameTitle');";
 		
 		if ($conn->multi_query($sql) === TRUE) {
 			echo "New records created successfully";
@@ -67,7 +66,7 @@ a:active {
             <td></td>
             <td><a href="http://webtech.kettering.edu/~reic6330/ESportsDBMSHome.html" id = "homebutton" class="btn btn btn-primary">Home</a></td>
             <td></td>
-        </tr>
+    </tr>
 </div>
 </body>
 </html>
