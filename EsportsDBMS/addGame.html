@@ -37,7 +37,19 @@ a.button {
 </head>
 <body>
 
-    
+    <form>
+        <div class="addGameForm">
+          <label for="gameTitle">Match ID</label>
+          <input type="text" class="form-control" id="gameTitle" aria-describedby="gameTitleHelp" placeholder="Enter Game Title">
+          <small id="gameTitleHelp" class="form-text text-muted">Value must be unique</small>
+        </div>
+        <div class="addGameForm">
+            <label for="coachName">League ID</label>
+            <input type="text" class="form-control" id="coachName" aria-describedby="coachNameHelp" placeholder="Enter Coaches Email">
+            <small id="coachNameHelp" class="form-text text-muted">Value must exist in database</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>    
 
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
