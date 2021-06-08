@@ -33,43 +33,54 @@ a.button {
     color: initial;
 }
 
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+
 </style>
 </head>
 <body>
     <div class="content">
-        <form>
+        <form action="php/addLeague.php" method="post">
             <div class="addLeagueForm">
             <label for="leagueId">League ID</label>
-            <input type="text" class="form-control" id="leagueId" aria-describedby="leagueIdHelp" placeholder="Enter league id">
+            <input type="text" class="form-control" id="leagueId" name="leagueId" aria-describedby="leagueIdHelp" placeholder="Enter league id">
             <small id="leagueIdHelp" class="form-text text-muted"></small>
             </div>
             <div class="addLeagueForm">
-                <label for="leagueName">Away team name</label>
-                <input type="text" class="form-control" id="leagueName" aria-describedby="leagueNameHelp" placeholder="Enter Away Team Name">
+                <label for="leagueName">League Name</label>
+                <input type="text" class="form-control" id="leagueName" name="leagueName" aria-describedby="leagueNameHelp" placeholder="Enter League Name">
                 <small id="leagueNameHelp" class="form-text text-muted"></small>
             </div>
             <div class="addLeagueForm">
                 <label for="startDate">Start Date</label>
-                <input type="date" class="form-control" id="startDate" aria-describedby="startDateHelp" placeholder="Enter Start Date">
+                <input type="date" class="form-control" id="startDate" name="startDate" aria-describedby="startDateHelp" placeholder="Enter Start Date">
                 <small id="startDateHelp" class="form-text text-muted"></small>
             </div>
             <div class="addLeagueForm">
                 <label for="endDate">End Date</label>
-                <input type="text" class="form-control" id="endDate" aria-describedby="endDateHelp" placeholder="Enter End Date">
+                <input type="date" class="form-control" id="endDate" name="endDate" aria-describedby="endDateHelp" placeholder="Enter End Date">
                 <small id="endDateHelp" class="form-text text-muted"></small>
             </div>
             <div class="addLeagueForm">
                 <label for="teamId">Team ID</label>
-                <input type="text" class="form-control" id="teamId" aria-describedby="teamIdHelp" placeholder="Enter a team name">
+                <input type="text" class="form-control" id="teamId" name="teamId" aria-describedby="teamIdHelp" placeholder="Enter a team name">
                 <small id="teamIdHelp" class="form-text text-muted"></small>
             </div>
             <div class="addLeagueForm">
                 <label for="gameTitle">Game title</label>
-                <input type="text" class="form-control" id="gameTitle" aria-describedby="gameTitleHelp" placeholder="Enter a game title">
+                <input type="text" class="form-control" id="gameTitle" name="gameTitle" aria-describedby="gameTitleHelp" placeholder="Enter a game title">
                 <small id="gameTitleHelp" class="form-text text-muted"></small>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+		<br>
+		<tr>
+            <td></td>
+            <td><a href="http://webtech.kettering.edu/~reic6330/ESportsDBMSHome.html" id = "homebutton" class="btn btn btn-primary">Home</a></td>
+            <td></td>
+		</tr>
     </div>
     
 

@@ -7,67 +7,77 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-<TITLE>Add Game</TITLE>
+<TITLE>Webtech Test Page</TITLE>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <style type="text/css">
 a:link {
-	color: #006633;
+        color: #006633;
 }
 a:visited {
-	color: #003366;
+        color: #003366;
 }
 a:hover {
-	color: #009933;
+        color: #009933;
 }
 a:active {
-	color: #990000;
-}
-
-a.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-
-    text-decoration: none;
-    color: initial;
+        color: #990000;
 }
 
 .content {
   max-width: 500px;
   margin: auto;
 }
-
 </style>
 </head>
 <body>
-    <div class="content">
-        <form action="php/addGame.php" method="post">
-            <div class="addGameForm">
-            <label for="gameTitle">Game Title</label>
-            <input type="text" class="form-control" id="gameTitle" name="gameTitle" aria-describedby="gameTitleHelp" placeholder="Enter Game Title">
-            <small id="gameTitleHelp" class="form-text text-muted">Value must be unique</small>
-            </div>
-            <div class="addGameForm">
-                <label for="coachName">Coach</label>
-                <input type="text" class="form-control" id="coachName" name="coachName"aria-describedby="coachNameHelp" placeholder="Enter Coach's Email">
-                <small id="coachNameHelp" class="form-text text-muted">Value must exist in database</small>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>   
-		<br>
-<tr>
+<div class="content">
+	<?php
+		
+
+		$servername = "localhost";
+		$username = "reic6330";
+		$password = "702036330";
+		$dbname = "test";
+
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		
+		if ($conn -> connect_error){
+			die("Connection failed: " . $conn->connect_error);
+		}
+		
+		
+		$leagueId = $_POST['leagueId'];
+		$leagueName = $_POST['leagueName'];
+		$startDate = $_POST['startDate'];
+		$endDate = $_POST['endDate'];
+		$teamId = $_POST['teamID'];
+		$gameTitle = $_POST['gameTitle'];
+		
+		
+		
+		$sql = " INSERT INTO `Leagues`
+			VALUES('$leagueId', '$leagueName', '$startDate', '$endDate', '$teamId', '$gameTitle');";
+		
+		
+		if ($conn->query($sql) === TRUE) {
+			echo "New records created successfully";
+		} else {
+			echo "Error: " . $sql . "<br>" . $conn->error;
+		}
+		
+		$conn->close();
+	
+	?>
+	<tr>
             <td></td>
             <td><a href="http://webtech.kettering.edu/~reic6330/ESportsDBMSHome.html" id = "homebutton" class="btn btn btn-primary">Home</a></td>
             <td></td>
-    </tr>		
-    </div>
+    </tr>
+</div>
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-
 </body>
 </html>
