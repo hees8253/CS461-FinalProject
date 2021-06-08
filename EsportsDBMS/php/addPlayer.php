@@ -16,9 +16,15 @@ a:hover {
 a:active {
         color: #990000;
 }
+
+.content {
+  max-width: 500px;
+  margin: auto;
+}
 </style>
 </head>
 <body>
+<div class="content">
 	<?php
 		
 
@@ -42,20 +48,21 @@ a:active {
 		$teamID = $_POST['teamID'];
 		$teamRole = $_POST['teamRole'];
 		
-		$sql = " INSERT INTO 'OrgMembers'
-			VALUES($inEmail, $name, $inGameName, $discordId, 'Player');
-			INSERT INTO 'Players'
-			Values($inGameName, $classStanding, $gradDate, $teamID, $teamRole);
-		";
+		$sql = " INSERT INTO `OrgMembers`
+			VALUES('$inEmail', '$name', '$inGameName', '$discordId', 'Player');";
+		$sql .= "
+			INSERT INTO `Players`
+			Values('$inGameName', '$classStanding', '$gradDate', '$teamID', '$teamRole');";
 		
-		$result=$conn->multi_query($sql);
-		
-		if($result){
-			echo "Player Added to database."
+		if ($conn->multi_query($sql) === TRUE) {
+			echo "New records created successfully";
+		} else {
+			echo "Error: " . $sql . "<br>" . $conn->error;
 		}
 		
-		
+		$conn->close();
 	
 	?>
+</div>
 </body>
 </html>
