@@ -36,21 +36,21 @@ a.button {
 </style>
 </head>
 <body>
-
-    <form>
-        <div class="addGameForm">
-          <label for="gameTitle">Match ID</label>
-          <input type="text" class="form-control" id="gameTitle" aria-describedby="gameTitleHelp" placeholder="Enter Game Title">
-          <small id="gameTitleHelp" class="form-text text-muted">Value must be unique</small>
-        </div>
-        <div class="addGameForm">
-            <label for="coachName">League ID</label>
-            <input type="text" class="form-control" id="coachName" aria-describedby="coachNameHelp" placeholder="Enter Coaches Email">
-            <small id="coachNameHelp" class="form-text text-muted">Value must exist in database</small>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>    
-
+    <div class="content">
+        <form>
+            <div class="addGameForm">
+            <label for="gameTitle">Match ID</label>
+            <input type="text" class="form-control" id="gameTitle" aria-describedby="gameTitleHelp" placeholder="Enter Game Title">
+            <small id="gameTitleHelp" class="form-text text-muted">Value must be unique</small>
+            </div>
+            <div class="addGameForm">
+                <label for="coachName">League ID</label>
+                <input type="text" class="form-control" id="coachName" aria-describedby="coachNameHelp" placeholder="Enter Coaches Email">
+                <small id="coachNameHelp" class="form-text text-muted">Value must exist in database</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>    
+    </div>
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
