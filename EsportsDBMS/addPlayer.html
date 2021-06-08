@@ -42,15 +42,57 @@ a.button {
 </head>
 <body>
 <div class="content">
-    <h1>Which are you adding?</h1>
-	<a href="http://webtech.kettering.edu/~reic6330/EsportsDBMS/addPlayer.html" id = "addPlayer" class="btn btn-outline-primary">Player</a> 
-	<a href="http://webtech.kettering.edu/~reic6330/EsportsDBMS/addStaff.html" id = "addStaff" class="btn btn-outline-danger">Staff</a> 
+    
+	<form action="addPlayer.php">
+	  <div class="form-group">
+		<label for="InputEmail">Email address</label>
+		<input type="email" class="form-control" id="InputEmail">
+	  </div>
+	  
+	  <div class="form-group">
+		<label for="Name">Name</label>
+		<input type="text" class="form-control" id="Name">
+	  </div>
+	  
+	  <div class="form-group">
+		<label for="inGameName">In Game Name</label>
+		<input type="text" class="form-control" id="inGameName">
+	  </div>
+	  
+	  <div class="form-group">
+		<label for="discordId">Discord ID</label>
+		<input type="text" class="form-control" id="discordId">
+	  </div>
+	  
+	  <div class="form-group">
+		<label for="discordId">Discord ID</label>
+		<input type="text" class="form-control" id="discordId">
+	  </div>
+	  
+	   <div class="form-group">
+		<label for="classStanding">Class Standing</label>
+		<input type="text" class="form-control" id="discordId"aria-describedby="classStandingHelp">
+    <small id="classStandingHelp" class="form-text text-muted">Must be FR, SO, JR, SR</small>
+	  </div> 
+	  
+	  <div class="form-group">
+		<label for="gradDate">Graduation Date</label>
+		<input type="date" class="form-control" id="gradDate">
+	  </div>
+	  
+	  <div class="form-group">
+		<label for="teamID">Team ID</label>
+		<input type="text" class="form-control" id="teamID">
+	  </div>
+	  
+	  <div class="form-group">
+		<label for="teamRole">Player's Role on Team</label>
+		<input type="text" class="form-control" id="teamRole">
+	  </div>
+	  
+	  <button type="submit" class="btn btn-primary">Submit</button>
+	</form>
 	
-	<tr>
-            <td></td>
-            <td><a href="http://webtech.kettering.edu/~reic6330/ESportsDBMSHome.html" id = "homebutton" class="btn btn btn-primary">Home</a></td>
-            <td></td>
-    </tr>
 
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
