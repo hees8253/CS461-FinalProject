@@ -33,11 +33,57 @@ a.button {
     color: initial;
 }
 
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+
 </style>
 </head>
 <body>
+<div class="content">
 
-    
+	<tr>
+        <form action="php/viewStats.php" method="post">
+            <div class="searchTeamsByGame">
+                <label for="statName">Enter Stat</label>
+                <input type="text" class="form-control" id="statName" name="statName" placeholder="Enter the stat you'd like to see, like 'kills'">
+            </div>
+			<div class="searchTeamsByGame">
+                <label for="playerID">Player</label>
+                <input type="text" class="form-control" id="playerID" name="playerID" placeholder="(optional) if you'd like to search for a player, enter their username">
+            </div>
+			<div class="searchTeamsByGame">
+                <label for="teamID">Team</label>
+                <input type="text" class="form-control" id="teamID" name="teamID" placeholder="(optional) if you'd like to search for a team, enter the teamID">
+            </div>
+			<div class="searchTeamsByGame">
+                <label for="leagueID">Team</label>
+                <input type="text" class="form-control" id="leagueID" name="leagueID" placeholder="(optional) if you'd like to search for a league, enter the leagueID">
+            </div>
+			<div class="searchTeamsByGame">
+                <label for="matchID">Match</label>
+                <input type="text" class="form-control" id="matchID" name="matchID" placeholder="(optional) if you'd like to search for a specific match, enter the matchID">
+            </div><br>
+			<div>NOTE: Only 1 optional search parameter will work at a time, in order of how they're added<br> 
+			ex: if playerID and teamID are specified, result will only be by playerID.</div>
+			<br>
+			<button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+		<br>
+          
+    </tr>
+    <tr>
+          <td></td>
+          <td><a href="http://webtech.kettering.edu/~reic6330/EsportsDBMS/php/viewAllStats.php" id = "viewAllStatsButton" class="btn btn-outline-primary">View All Stats</a></td>
+          <td></td>
+    </tr>
+	<br><br>
+	<tr>
+          <td></td>
+          <td><a href="http://webtech.kettering.edu/~reic6330/ESportsDBMSHome.html" id = "homebutton" class="btn btn btn-primary">Home</a></td>
+          <td></td>
+    </tr>
 
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -45,6 +91,6 @@ a.button {
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-
+</div>
 </body>
 </html>

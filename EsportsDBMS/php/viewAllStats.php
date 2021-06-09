@@ -31,40 +31,38 @@ a:active {
 </head>
 <body>
 <div class="content">
-	<?php
-		
-		
-		$servername = "localhost";
-		$username = "reic6330";
-		$password = "702036330";
-		$dbname = "test";
+	    <?php
+        
+        
+        $servername = "localhost";
+        $username = "reic6330";
+        $password = "702036330";
+        $dbname = "test";
 
-		$conn = new mysqli($servername, $username, $password, $dbname);
-		
-		if ($conn -> connect_error){
-			die("Connection failed: " . $conn->connect_error);
-		}
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        
+        if ($conn -> connect_error){
+            die("Connection failed: " . $conn->connect_error);
+        }
 
-		$sql = "SELECT  *
-				FROM Games;
-				";
-		$result = $conn->query($sql);
 		
-		console.log($result);
-		if ($result->num_rows > 0) {
-			echo "<br>| Game: | Coach <br> ";
-			while($row = $result->fetch_assoc()){
-				echo "<br>"
-				.$row["title"].
-				" | ".$row["coach"].
-				
-				"<br>";           
-			}
-		} else {
-			echo "0 Results";
-		}
-	
-	?>
+		$sql = "SELECT * FROM Stats;";
+
+        $result = $conn->query($sql);
+                
+        if ($result->num_rows > 0) {
+
+            echo "<br>| Stat Name: | Player: | Team: | League: | match: |<br>";
+
+            while($row = $result->fetch_assoc()){
+                echo "<br>" . $row["statName"] . " | " . $row["playerID"] . " | " . $row["teamID"] . " | " . $row["leagueID"] . " | " . $row["matchID"] . "<br>";
+            }
+        } else {
+            echo "0 Results";
+        }
+        
+    
+    ?>
 	<br>
 	<tr>
             <td></td>
