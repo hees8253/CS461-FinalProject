@@ -31,45 +31,39 @@ a:active {
 </head>
 <body>
 <div class="content">
-	<?php
-		
-		ini_set('display_errors', 1);
-		ini_set('display_startup_errors', 1);
-		error_reporting(E_ALL);
+	    <?php
+        
+        
+        $servername = "localhost";
+        $username = "reic6330";
+        $password = "702036330";
+        $dbname = "test";
 
-		$servername = "localhost";
-		$username = "reic6330";
-		$password = "702036330";
-		$dbname = "test";
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        
+        if ($conn -> connect_error){
+            die("Connection failed: " . $conn->connect_error);
+        }
 
-		$conn = new mysqli($servername, $username, $password, $dbname);
-		
-		if ($conn -> connect_error){
-			die("Connection failed: " . $conn->connect_error);
-		}
-		
-		$gameTitle = $_POST['gameTitle'];
-		
-		$sql = "SELECT * 
-				FROM Teams
-				WHERE game = '$gameTitle'"
-				;
-		$result = $conn->query($sql);
+        $gameTitle = $_POST['gameTitle'];
 
-		if ($result->num_rows > 0) {
-			echo "<br>| Team: | Game: | Max Players: <br> "
-			while($row = $result->fetch_assoc()){
-				echo .$row["teamName"].
-				" | ".$row["game"].
-				" | ". $row["numPlayers"]. 
-				
-				"<br>";           
-			}
-		} else {
-			echo "0 Results";
-		}
-	
-	?>
+        $sql = "SELECT * FROM Teams WHERE game = '$gameTitle';";
+        
+        $result = $conn->query($sql);
+                
+        if ($result->num_rows > 0) {
+
+            echo "<br>| Team: | Game: | Max Players: <br>";
+
+            while($row = $result->fetch_assoc()){
+                echo "<br>" . $row["teamName"] . " | " . $row["game"] . " | " . $row["numPlayers"] . "<br>";
+            }
+        } else {
+            echo "0 Results";
+        }
+        
+    
+    ?>
 	<br>
 	<tr>
             <td></td>
