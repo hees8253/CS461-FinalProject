@@ -45,21 +45,18 @@ a:active {
 			die("Connection failed: " . $conn->connect_error);
 		}
 
-		$sql = "SELECT o.email, o.name, o.inGameName, o.discordId, s.role, s.gameTitle 
-				FROM Staff AS s 
-				INNER JOIN OrgMembers AS o ON o.inGameName = s.inGameName
+		$sql = "SELECT t.teamName, t.numPlayers, t.game 
+				FROM Teams AS t 
 				";
 		$result = $conn->query($sql);
 
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()){
-				echo "<br>| Email: | Name:| In Game Name:| Discord ID:| Role: | Game: <br> "
-				.$row["email"].
-				" | ".$row["name"].
-				" | ". $row["inGameName"]. 
-				" | ". $row["discordId"].
-				" | ". $row["role"]. 
-				" | ". $row["gameTitle"].
+				echo "<br>| Team: | Game: | Max Players: <br> "
+				.$row["teamName"].
+				" | ".$row["game"].
+				" | ". $row["numPlayers"]. 
+				
 				"<br>";           
 			}
 		} else {
