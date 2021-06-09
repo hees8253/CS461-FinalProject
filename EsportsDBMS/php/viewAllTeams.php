@@ -51,8 +51,9 @@ a:active {
 		$result = $conn->query($sql);
 
 		if ($result->num_rows > 0) {
+			echo "<br>| Team: | Game: | Max Players: <br> ";
 			while($row = $result->fetch_assoc()){
-				echo "<br>| Team: | Game: | Max Players: <br> "
+				echo "<br> |"
 				.$row["teamName"].
 				" | ".$row["game"].
 				" | ". $row["numPlayers"]. 

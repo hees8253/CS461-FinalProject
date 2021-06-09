@@ -44,47 +44,21 @@ a:active {
         if ($conn -> connect_error){
             die("Connection failed: " . $conn->connect_error);
         }
-
-        $statName = $_POST['statName'];
-		$sqlSelect = 0;
-		if($_POST['playerID'] != ''){
-			$playerID = $_POST['playerID'];
-			$sqlSelect = 1;
-		} else if($_POST['teamID'] != ''){
-			$teamID = $_POST['teamID'];
-			$sqlSelect = 2;
-		} else if($_POST['leagueID'] != ''){
-			$leagueID = $_POST['leagueID'];
-			$sqlSelect = 3;
-		} else if($_POST['matchID'] != ''){
-			$matchID = $_POST['matchID'];
-			$sqlSelect = 4;
-		}
 		
-		if($sqlSelect = 0){
-			$sql = "SELECT * FROM Stats WHERE statName = '$statName';";
-		} else if($sqlSelect = 1){
-			$sql = "SELECT * FROM Stats WHERE statName = '$statName' AND playerID = '$playerID';";
-		} else if($sqlSelect = 2){
-			$sql = "SELECT * FROM Stats WHERE statName = '$statName' AND teamID = '$teamID';";
-		} else if($sqlSelect = 3){
-			$sql = "SELECT * FROM Stats WHERE statName = '$statName' AND leagueID = '$leagueID';";
-		} else if($sqlSelect = 4){
-			$sql = "SELECT * FROM Stats WHERE statName = '$statName' AND matchID = '$matchID';";
-		} else{
-			$sql = "SELECT * FROM Stats;";
-		}
+		$game = $_POST("gameTitle");
+		
+		$sql = "SELECT L.leagueName, L.startDate, L.endDate, T.teamName, L.game 
+				FROM Leagues as L WHERE L.game = '$game'
+				INNER JOIN Teams as T ON L.teamID = T.teamID;";
 
-        
-        
         $result = $conn->query($sql);
                 
         if ($result->num_rows > 0) {
 
-            echo "<br>| Stat Name: | Value: | Player: | Team: | League: | match: |<br>";
+            echo "<br>| League: | Team Enrolled: | Start Date: | End Date: | Game |<br>";
 
             while($row = $result->fetch_assoc()){
-                echo "<br>" . $row["statName"] . " | " . $row["statValue"] . " | " . $row["playerID"] . " | " . $row["teamID"] . " | " . $row["leagueID"] . " | " . $row["matchID"] . "<br>";
+                echo "<br>" . $row["leagueName"] . " | " . $row["teamName"] . " | " . $row["startDate"] . " | " . $row["endDate"] . " | " . $row["game"] . "<br>";
             }
         } else {
             echo "0 Results";
