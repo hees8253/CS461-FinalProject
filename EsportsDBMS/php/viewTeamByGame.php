@@ -45,11 +45,12 @@ a:active {
 			die("Connection failed: " . $conn->connect_error);
 		}
 		
-		$gameTile = $_POST['gameTitle'];
+		$gameTitle = $_POST['gameTitle'];
 		
-		$sql = "SELECT t.teamName, t.numPlayers, t.game 
-				FROM Teams AS t WHERE t.game = '$gameTitle'
-				";
+		$sql = "SELECT * 
+				FROM Teams
+				WHERE game = '$gameTitle'"
+				;
 		$result = $conn->query($sql);
 
 		if ($result->num_rows > 0) {

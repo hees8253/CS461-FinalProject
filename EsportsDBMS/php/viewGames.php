@@ -33,7 +33,10 @@ a:active {
 <div class="content">
 	<?php
 		
-
+		ini_set('display_errors', 1);
+		ini_set('display_startup_errors', 1);
+		error_reporting(E_ALL);
+		
 		$servername = "localhost";
 		$username = "reic6330";
 		$password = "702036330";
@@ -50,7 +53,8 @@ a:active {
 				INNER JOIN Teams AS t ON t.game = g.title
 				";
 		$result = $conn->query($sql);
-
+		
+		console.log($result);
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()){
 				echo "<br>| Game: | Coach | Number of Teams <br> "
