@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<TITLE>Webtech Test Page</TITLE>
+<TITLE>Kettering Esports Staff Directory</TITLE>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <style type="text/css">
 a:link {
@@ -45,24 +45,21 @@ a:active {
 			die("Connection failed: " . $conn->connect_error);
 		}
 
-		$sql = "SELECT o.email, o.name, o.inGameName, o.discordId, p.classStanding, p.gradDate, t.teamName, p.teamRole 
-				FROM Players AS p 
-				INNER JOIN OrgMembers AS o ON o.inGameName = p.inGameName
-				INNER JOIN Teams AS t ON p.teamID = t.teamID
+		$sql = "SELECT o.email, o.name, o.inGameName, o.discordId, s.role, s.gameTitle 
+				FROM Staff AS s 
+				INNER JOIN OrgMembers AS o ON o.inGameName = s.inGameName
 				";
 		$result = $conn->query($sql);
 
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()){
-				echo "<br>| Email: | Name:| In Game Name:| Discord ID:| Class Standing:| Graduation Date: | Team: | Team Role: <br> "
+				echo "<br>| Email: | Name:| In Game Name:| Discord ID:| Role: | Game: <br> "
 				.$row["email"].
 				" | ".$row["name"].
 				" | ". $row["inGameName"]. 
 				" | ". $row["discordId"].
-				" | ". $row["classStanding"]. 
-				" | ". $row["gradDate"].
-				" | ". $row["teamName"].
-				" | ". $row["teamRole"].
+				" | ". $row["role"]. 
+				" | ". $row["gameTitle"].
 				"<br>";           
 			}
 		} else {
