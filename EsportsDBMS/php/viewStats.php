@@ -81,10 +81,10 @@ a:active {
                 
         if ($result->num_rows > 0) {
 
-            echo "<br>| Stat Name: | Player: | Team: | League: | match: |<br>";
+            echo "<br>| Stat Name: | Value: | Player: | Team: | League: | match: |<br>";
 
             while($row = $result->fetch_assoc()){
-                echo "<br>" . $row["statName"] . " | " . $row["playerID"] . " | " . $row["teamID"] . " | " . $row["leagueID"] . " | " . $row["matchID"] . "<br>";
+                echo "<br>" . $row["statName"] . " | " . $row["statValue"] . " | " . $row["playerID"] . " | " . $row["teamID"] . " | " . $row["leagueID"] . " | " . $row["matchID"] . "<br>";
             }
         } else {
             echo "0 Results";
