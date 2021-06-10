@@ -45,11 +45,12 @@ a:active {
             die("Connection failed: " . $conn->connect_error);
         }
 		
-		$game = $_POST("gameTitle");
+		$game = $_POST["gameTitle"];
 		
 		$sql = "SELECT L.leagueName, L.startDate, L.endDate, T.teamName, L.game 
-				FROM Leagues as L WHERE L.game = '$game'
-				INNER JOIN Teams as T ON L.teamID = T.teamID;";
+				FROM Leagues as L 
+				INNER JOIN Teams as T ON L.teamID = T.teamID
+				WHERE L.game = '$game';";
 
         $result = $conn->query($sql);
                 
