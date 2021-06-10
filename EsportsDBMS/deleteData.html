@@ -10,14 +10,18 @@
 
     <table>
       <tr>
-          <td><a href="http://webtech.kettering.edu/~reic6330/EsportsDBMS/deleteOrgMems.html" id = "deleteOrgMemButton" class="btn btn-outline-primary">Delete Org Members</a></td>
-          <td><a href="http://webtech.kettering.edu/~reic6330/EsportsDBMS/deleteMatch.html" id = "deleteMatchButton" class="btn btn-outline-primary">Delete Match</a></td>
-          <td><a href="http://webtech.kettering.edu/~reic6330/EsportsDBMS/deleteTeam.html" id = "deleteTeamButton" class="btn btn-outline-primary">Delete Team</a></td>
+        <form method="post" action="http://webtech.kettering.edu/~reic6330/EsportsDBMS/php/delete.php">
+          <td><button name="table_name" value="OrgMembers" type="submit" id = "deleteOrgMemButton" class="btn btn-outline-primary">Delete Org Member</button></td>
+          <td><button name="table_name" value="Matches" type="submit" id = "deleteMatchButton" class="btn btn-outline-primary">Delete Match</button></td>
+          <td><button name="table_name" value="Teams" type="submit" id = "deleteTeamButton" class="btn btn-outline-primary">Delete Team</button></td>
+        </form>
       </tr>
       <tr>
-          <td><a href="http://webtech.kettering.edu/~reic6330/EsportsDBMS/deleteStat.html" id = "deleteStatButton" class="btn btn-outline-primary">Delete Stat</a></td>
-          <td><a href="http://webtech.kettering.edu/~reic6330/EsportsDBMS/deleteLeague.html" id = "deleteLeagueButton" class="btn btn-outline-primary">Delete League</a></td>
-          <td><a href="http://webtech.kettering.edu/~reic6330/EsportsDBMS/deleteGame.html" id = "deleteGameButton" class="btn btn-outline-primary">Delete Game</a></td>
+        <form method="post" action="http://webtech.kettering.edu/~reic6330/EsportsDBMS/php/delete.php">
+          <td><button name="table_name" value="Stats" type="submit" id = "deleteStatsButton" class="btn btn-outline-primary">Delete Stat</button></td>
+          <td><button name="table_name" value="Leagues" type="submit" id = "deleteLeagueButton" class="btn btn-outline-primary">Delete League</button></td>
+          <td><button name="table_name" value="Games" type="submit" id = "deleteGameButton" class="btn btn-outline-primary">Delete Game</button></td>
+        </form>
       </tr>
       <tr>
           <td></td>
