@@ -48,7 +48,8 @@ a:active {
 		$statName = $_POST['statName'];
 		$statValue = $_POST['statValue'];
 		$playerID = $_POST['playerID'];
-		$teamID = $_POST['matchID'];
+		$teamID = $_POST['teamID'];
+		$matchID = $_POST['matchID'];
 		$leagueID = $_POST['leagueID'];
 		
 		

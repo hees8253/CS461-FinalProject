@@ -46,6 +46,12 @@ a:active {
         echo "<p>" . $sql . "</p>";
         echo "<p> Removed object with id " . $id . " from " . $table_name . "</p>";
 	?>
+	<br>
+	<tr>
+            <td></td>
+            <td><a href="http://webtech.kettering.edu/~reic6330/ESportsDBMSHome.html" id = "homebutton" class="btn btn btn-primary">Home</a></td>
+            <td></td>
+    </tr>
 </div>
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
